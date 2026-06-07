@@ -12,7 +12,7 @@ export default function Guarantees() {
   return (
     <section className="bg-brand-blue py-16 sm:py-20">
       <Container>
-        <h2 className="text-center text-xl font-bold uppercase tracking-wide text-white sm:text-2xl lg:text-3xl">
+        <h2 className="text-center text-xl font-normal uppercase tracking-wide text-white sm:text-2xl lg:text-3xl">
           Seu corpo merece mais conforto todos os dias
         </h2>
 

@@ -3,7 +3,7 @@ import { CHECKOUT_URL, CHECKOUT_TARGET } from "@/lib/config";
 import { ChevronRight, ArrowOutward } from "@/components/icons";
 
 type Variant = "orange" | "blue" | "navy" | "outline";
-type Arrow = "circle" | "outward" | "none";
+type Arrow = "square" | "outward" | "none";
 
 interface CtaButtonProps {
   children: ReactNode;
@@ -18,19 +18,20 @@ interface CtaButtonProps {
 }
 
 const base =
-  "group inline-flex items-center justify-center gap-3 rounded-xl px-6 py-4 text-sm font-semibold tracking-wide transition-colors duration-200 sm:px-7";
+  "group inline-flex items-center justify-center gap-3 px-6 py-3.5 text-sm transition-colors duration-200 sm:px-7";
 
 const variants: Record<Variant, string> = {
-  orange: "bg-accent-orange text-white hover:bg-[#e64500]",
-  blue: "bg-brand-blue text-white hover:bg-[#0a5aa0]",
-  navy: "bg-brand-navy text-white hover:bg-[#06294f]",
+  orange:
+    "rounded-2xl bg-accent-orange text-white hover:bg-[#e64500] font-semibold uppercase tracking-wide",
+  blue: "rounded-2xl bg-brand-blue text-white hover:bg-[#0a5aa0] font-semibold uppercase tracking-wide",
+  navy: "rounded-2xl bg-brand-navy text-white hover:bg-[#06294f] font-semibold uppercase tracking-wide",
   outline:
-    "border border-white/70 bg-transparent text-white hover:bg-white/10",
+    "rounded-full border border-white/60 bg-transparent text-white hover:bg-white/10 font-medium",
 };
 
-// Cor do círculo da seta por variante
-const circleByVariant: Record<Variant, string> = {
-  orange: "bg-brand-navy text-white",
+// Cor do "squircle" (quadrado arredondado) que segura a seta ">"
+const squircleByVariant: Record<Variant, string> = {
+  orange: "bg-brand-deep text-white",
   blue: "bg-brand-navy text-white",
   navy: "bg-brand-blue text-white",
   outline: "bg-white text-brand-navy",
@@ -41,7 +42,7 @@ export default function CtaButton({
   variant = "orange",
   href = CHECKOUT_URL,
   target = CHECKOUT_TARGET,
-  arrow = "circle",
+  arrow = "square",
   className = "",
   fullWidth = false,
   ...rest
@@ -56,9 +57,9 @@ export default function CtaButton({
       {...rest}
     >
       <span>{children}</span>
-      {arrow === "circle" && (
+      {arrow === "square" && (
         <span
-          className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${circleByVariant[variant]} transition-transform duration-200 group-hover:translate-x-0.5`}
+          className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${squircleByVariant[variant]} transition-transform duration-200 group-hover:translate-x-0.5`}
           aria-hidden
         >
           <ChevronRight className="h-4 w-4" />

@@ -51,7 +51,7 @@ export default function Faq() {
               variant="outline"
               arrow="outward"
               href={SUPPORT_URL}
-              className="mt-7 rounded-full"
+              className="mt-7"
             >
               Falar com suporte
             </CtaButton>

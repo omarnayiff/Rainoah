@@ -39,7 +39,7 @@ export default function FourHeads() {
                     src="/icons/check-seal-blue.png"
                     alt=""
                     aria-hidden
-                    className="mt-0.5 h-5 w-5 shrink-0"
+                    className="mt-0.5 h-7 w-7 shrink-0"
                   />
                   <span className="text-sm text-white/90 sm:text-base">
                     <span className="font-semibold text-white">{c.nome}</span>{" "}

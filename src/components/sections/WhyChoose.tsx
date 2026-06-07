@@ -19,8 +19,8 @@ export default function WhyChoose() {
     <section className="bg-gradient-to-b from-brand-blue to-brand-navy py-14 sm:py-20">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          {/* Vídeo — TODO: asset (capa = foto do vídeo; aguardando vídeo final) */}
-          <div className="relative aspect-video overflow-hidden rounded-3xl bg-brand-navy/60 ring-1 ring-white/10">
+          {/* Vídeo vertical (formato rede social 9:16) — TODO: asset (aguardando vídeo final) */}
+          <div className="relative mx-auto aspect-[9/16] w-full max-w-[300px] overflow-hidden rounded-3xl bg-brand-navy/60 ring-1 ring-white/10">
             <div className="absolute inset-0 grid place-items-center">
               <div className="flex flex-col items-center gap-3 text-white/80">
                 <span className="grid h-16 w-16 place-items-center rounded-full bg-white/15 ring-1 ring-white/30 backdrop-blur">
@@ -46,7 +46,7 @@ export default function WhyChoose() {
                     src="/icons/check-seal-blue.png"
                     alt=""
                     aria-hidden
-                    className="h-5 w-5 shrink-0"
+                    className="h-7 w-7 shrink-0"
                   />
                   <span className="text-sm text-white/90 sm:text-base">{f}</span>
                 </li>

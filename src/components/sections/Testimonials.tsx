@@ -58,7 +58,7 @@ export default function Testimonials() {
             {DEPOIMENTOS.map((d) => (
               <li
                 key={d.nome}
-                className="flex shrink-0 basis-[85%] snap-start flex-col rounded-2xl bg-white p-6 shadow-card sm:basis-[46%] lg:basis-[31.5%]"
+                className="flex h-[454px] w-[86vw] max-w-[400px] shrink-0 snap-start flex-col rounded-2xl bg-white p-7 shadow-card sm:w-[400px]"
               >
                 <div className="flex items-center gap-3">
                   <UserAvatar className="h-12 w-12 shrink-0 text-brand-blue" />

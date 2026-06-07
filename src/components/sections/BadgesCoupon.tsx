@@ -23,7 +23,7 @@ export default function BadgesCoupon() {
                 src="/icons/check-seal-blue.png"
                 alt=""
                 aria-hidden
-                className="h-6 w-6 shrink-0"
+                className="h-7 w-7 shrink-0"
               />
               <span className="text-sm font-medium text-white sm:text-base">
                 {selo}
