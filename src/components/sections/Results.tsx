@@ -17,8 +17,8 @@ const BENEFICIOS = [
 
 export default function Results() {
   return (
-    <section className="relative isolate overflow-hidden py-14 sm:py-16">
-      {/* Foto de fundo, sem overlay */}
+    <section className="relative z-20 py-16 sm:py-24">
+      {/* Foto de fundo, sem overlay (imagem em destaque) */}
       <img
         src="/images/resultados.jpg"
         alt="Mulher sorrindo segurando a massageadora Powerflex GO"
@@ -30,13 +30,13 @@ export default function Results() {
           Resultados que você pode sentir
         </h2>
 
-        <div className="mt-14 grid gap-12 lg:grid-cols-3 lg:items-center lg:gap-6">
-          {/* Antes (coral) */}
-          <div className="relative rounded-3xl bg-accent-coral/85 px-6 pb-5 pt-8 shadow-card backdrop-blur-sm">
+        <div className="mt-14 grid gap-10 lg:grid-cols-3 lg:items-center lg:gap-6">
+          {/* Antes (coral, translúcido) */}
+          <div className="relative rounded-3xl bg-accent-coral/75 px-6 pb-5 pt-8 shadow-card">
             <span className="absolute -left-4 -top-5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-md">
               <img src="/icons/x-red.png" alt="" aria-hidden className="h-9 w-9" />
             </span>
-            <ul className="divide-y divide-white/25">
+            <ul className="divide-y divide-white/30">
               {PROBLEMAS.map((p) => (
                 <li key={p} className="py-3 text-sm font-medium text-white sm:text-base">
                   {p}
@@ -45,13 +45,11 @@ export default function Results() {
             </ul>
           </div>
 
-          {/* Botão bem no meio das duas seções */}
-          <div className="flex items-center justify-center">
-            <CtaButton variant="navy">Quero esses resultados</CtaButton>
-          </div>
+          {/* Espaço central que mostra a foto (desktop) */}
+          <div className="hidden lg:block lg:min-h-[420px]" aria-hidden />
 
-          {/* Depois (azul) */}
-          <div className="relative rounded-3xl bg-brand-cardlight/85 px-6 pb-5 pt-8 shadow-card backdrop-blur-sm">
+          {/* Depois (azul, translúcido) */}
+          <div className="relative rounded-3xl bg-brand-cardlight/75 px-6 pb-5 pt-8 shadow-card">
             <span className="absolute -left-4 -top-5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-md">
               <img
                 src="/icons/check-seal-green.png"
@@ -60,7 +58,7 @@ export default function Results() {
                 className="h-10 w-10"
               />
             </span>
-            <ul className="divide-y divide-white/25">
+            <ul className="divide-y divide-white/30">
               {BENEFICIOS.map((b) => (
                 <li key={b} className="py-3 text-sm font-medium text-white sm:text-base">
                   {b}
@@ -70,6 +68,11 @@ export default function Results() {
           </div>
         </div>
       </Container>
+
+      {/* Botão centralizado, atravessando a linha da próxima seção */}
+      <div className="absolute bottom-0 left-1/2 z-30 -translate-x-1/2 translate-y-1/2">
+        <CtaButton variant="navy">Quero esses resultados</CtaButton>
+      </div>
     </section>
   );
 }
