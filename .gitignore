@@ -1,0 +1,34 @@
+# dependências
+/node_modules
+/.pnp
+.pnp.*
+
+# build / saída estática
+/.next/
+/out/
+/build
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ambiente / secrets
+.env
+.env*.local
+
+# sistema / editor
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+next-env.d.ts
+
+# config local de ferramentas
+.claude/
+
+# arquivos temporários
+_tmp_*
+
+# referências de design (prints e fotos originais) — uso local, fora do deploy
+/reference/

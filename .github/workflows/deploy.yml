@@ -1,0 +1,41 @@
+name: Deploy estático para a Hostinger (FTP)
+
+# Builda o site e envia a pasta /out para o public_html via FTP
+# a cada push na branch main. Também pode ser disparado manualmente.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Gerar build estático (/out)
+        run: npm run build
+
+      - name: Enviar /out para a Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Conteúdo que será enviado (saída do build)
+          local-dir: ./out/
+          # Pasta de destino no servidor.
+          # - Se a conta FTP foi criada JÁ apontando para a pasta do site,
+          #   troque para:  ./
+          # - Se for a conta FTP principal da Hostinger, mantenha:  ./public_html/
+          server-dir: ./public_html/
