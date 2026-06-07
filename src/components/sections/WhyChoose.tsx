@@ -1,6 +1,6 @@
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
-import { CheckCircle, Play } from "@/components/icons";
+import { Play } from "@/components/icons";
 import { PRODUCT } from "@/lib/config";
 
 const FEATURES = [
@@ -42,7 +42,12 @@ export default function WhyChoose() {
             <ul className="mt-7 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
               {FEATURES.map((f) => (
                 <li key={f} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 shrink-0 text-brand-sky" />
+                  <img
+                    src="/icons/check-seal-blue.png"
+                    alt=""
+                    aria-hidden
+                    className="h-5 w-5 shrink-0"
+                  />
                   <span className="text-sm text-white/90 sm:text-base">{f}</span>
                 </li>
               ))}

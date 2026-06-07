@@ -1,12 +1,11 @@
 import Container from "@/components/ui/Container";
-import { Truck, TagPercent, ShieldCheck, CreditCard } from "@/components/icons";
 import { COUPON_CODE } from "@/lib/config";
 
 const ITENS = [
-  { Icon: Truck, label: "Frete Grátis" },
-  { Icon: TagPercent, label: `10% OFF com o cupom ${COUPON_CODE}` },
-  { Icon: ShieldCheck, label: "Garantia de 12 meses" },
-  { Icon: CreditCard, label: "Parcelamento facilitado 12X SEM JUROS" },
+  { icon: "/icons/g-frete.png", label: "Frete Grátis" },
+  { icon: "/icons/g-cupom.png", label: `10% OFF com o cupom ${COUPON_CODE}` },
+  { icon: "/icons/g-garantia.png", label: "Garantia de 12 meses" },
+  { icon: "/icons/g-parcelamento.png", label: "Parcelamento facilitado 12X SEM JUROS" },
 ];
 
 export default function Guarantees() {
@@ -18,9 +17,14 @@ export default function Guarantees() {
         </h2>
 
         <ul className="mt-12 grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
-          {ITENS.map(({ Icon, label }) => (
+          {ITENS.map(({ icon, label }) => (
             <li key={label} className="flex flex-col items-center text-center">
-              <Icon className="h-12 w-12 text-brand-sky" />
+              <img
+                src={icon}
+                alt=""
+                aria-hidden
+                className="h-14 w-14 object-contain"
+              />
               <span className="mt-4 max-w-[14rem] text-sm text-white sm:text-base">
                 {label}
               </span>

@@ -1,5 +1,4 @@
 import Container from "@/components/ui/Container";
-import { SealCheck } from "@/components/icons";
 import { COUPON_CODE, COUPON_DISCOUNT } from "@/lib/config";
 
 const SELOS = [
@@ -20,7 +19,12 @@ export default function BadgesCoupon() {
               key={selo}
               className="flex items-center gap-2.5 rounded-xl bg-brand-deep/50 px-4 py-3 ring-1 ring-white/10"
             >
-              <SealCheck className="h-6 w-6 shrink-0 text-brand-sky" />
+              <img
+                src="/icons/check-seal-blue.png"
+                alt=""
+                aria-hidden
+                className="h-6 w-6 shrink-0"
+              />
               <span className="text-sm font-medium text-white sm:text-base">
                 {selo}
               </span>

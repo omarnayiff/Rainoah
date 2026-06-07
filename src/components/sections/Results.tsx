@@ -1,6 +1,5 @@
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
-import { DotTarget, CheckMark } from "@/components/icons";
 
 const PROBLEMAS = [
   "Músculos tensos",
@@ -32,39 +31,42 @@ export default function Results() {
           Resultados que você pode sentir
         </h2>
 
-        <div className="mt-9 grid gap-4 lg:grid-cols-3 lg:items-center lg:gap-6">
+        <div className="mt-12 grid gap-10 lg:grid-cols-3 lg:items-center lg:gap-6">
           {/* Antes (coral) */}
-          <ul className="space-y-3">
-            {PROBLEMAS.map((p) => (
-              <li
-                key={p}
-                className="flex items-center gap-3 rounded-xl bg-accent-coral px-4 py-3 text-white shadow-card"
-              >
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-white/25">
-                  <DotTarget className="h-5 w-5" />
-                </span>
-                <span className="text-sm font-medium sm:text-base">{p}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="relative rounded-3xl bg-accent-coral px-6 pb-5 pt-7 shadow-card">
+            <span className="absolute -left-3 -top-4 grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-md">
+              <img src="/icons/x-red.png" alt="" aria-hidden className="h-7 w-7" />
+            </span>
+            <ul className="divide-y divide-white/25">
+              {PROBLEMAS.map((p) => (
+                <li key={p} className="py-3 text-sm font-medium text-white sm:text-base">
+                  {p}
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Espaço central que revela a foto (desktop) */}
-          <div className="hidden lg:block lg:min-h-[260px]" aria-hidden />
+          <div className="hidden lg:block lg:min-h-[240px]" aria-hidden />
 
           {/* Depois (azul) */}
-          <ul className="space-y-3">
-            {BENEFICIOS.map((b) => (
-              <li
-                key={b}
-                className="flex items-center gap-3 rounded-xl bg-brand-cardlight px-4 py-3 text-white shadow-card"
-              >
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-emerald-500">
-                  <CheckMark className="h-4 w-4" />
-                </span>
-                <span className="text-sm font-medium sm:text-base">{b}</span>
-              </li>
-            ))}
-          </ul>
+          <div className="relative rounded-3xl bg-brand-cardlight px-6 pb-5 pt-7 shadow-card">
+            <span className="absolute -right-3 -top-4 grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-md">
+              <img
+                src="/icons/check-seal-green.png"
+                alt=""
+                aria-hidden
+                className="h-8 w-8"
+              />
+            </span>
+            <ul className="divide-y divide-white/25">
+              {BENEFICIOS.map((b) => (
+                <li key={b} className="py-3 text-sm font-medium text-white sm:text-base">
+                  {b}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <div className="mt-10 flex justify-center">

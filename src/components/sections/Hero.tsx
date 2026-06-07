@@ -17,17 +17,11 @@ export default function Hero() {
         aria-hidden
       />
 
-      {/* Logo no topo */}
-      <header className="relative pt-6 sm:pt-8">
+      {/* Conteúdo do hero (logo agrupado acima do título, maior e mais pra baixo) */}
+      <div className="relative flex flex-1 items-center py-16">
         <Container>
-          <Logo size={36} className="text-white" />
-        </Container>
-      </header>
-
-      {/* Conteúdo do hero */}
-      <div className="relative flex flex-1 items-center py-14">
-        <Container>
-          <h1 className="max-w-2xl text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-[3.5rem]">
+          <Logo size={52} className="text-white" />
+          <h1 className="mt-8 max-w-2xl text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-[3.5rem]">
             Se livre de uma vez por todas{" "}
             <span className="text-brand-sky">dessa dor.</span>
           </h1>

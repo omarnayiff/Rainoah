@@ -1,6 +1,5 @@
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
-import { CheckCircle } from "@/components/icons";
 import { PRODUCT } from "@/lib/config";
 
 const DORES = [
@@ -13,20 +12,19 @@ const DORES = [
 
 export default function BodySocorro() {
   return (
-    <section className="bg-brand-blue py-14 sm:py-20">
-      <Container>
-        <div className="grid items-stretch gap-6 lg:grid-cols-2 lg:gap-10">
-          {/* Foto */}
-          <div className="overflow-hidden rounded-3xl">
-            <img
-              src="/images/socorro.jpg"
-              alt="Mulher sentada na cama segurando o ombro com dor"
-              className="h-64 w-full object-cover sm:h-80 lg:h-full"
-            />
-          </div>
+    <section className="relative isolate overflow-hidden py-14 sm:py-20">
+      {/* Foto de fundo inteira (full-bleed) */}
+      <img
+        src="/images/socorro.jpg"
+        alt="Mulher sentada na cama segurando o ombro com dor"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[28%_center]"
+      />
+      <div className="absolute inset-0 -z-10 bg-black/20" aria-hidden />
 
-          {/* Card */}
-          <div className="rounded-3xl bg-brand-card p-7 sm:p-10">
+      <Container>
+        <div className="flex justify-end">
+          {/* Card semi-transparente por cima da foto */}
+          <div className="w-full rounded-3xl bg-brand-card/85 p-7 ring-1 ring-white/10 backdrop-blur-md sm:p-10 lg:max-w-xl">
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
               Seu corpo está pedindo socorro?
             </h2>
@@ -34,7 +32,12 @@ export default function BodySocorro() {
             <ul className="mt-6 space-y-3">
               {DORES.map((dor) => (
                 <li key={dor} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand-sky" />
+                  <img
+                    src="/icons/check-seal-blue.png"
+                    alt=""
+                    aria-hidden
+                    className="mt-0.5 h-5 w-5 shrink-0"
+                  />
                   <span className="text-sm text-white/90 sm:text-base">{dor}</span>
                 </li>
               ))}

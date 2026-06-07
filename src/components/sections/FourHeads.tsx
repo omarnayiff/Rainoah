@@ -1,6 +1,5 @@
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
-import { CheckCircle } from "@/components/icons";
 
 const CABECAS = [
   { nome: "Cabeça em U", desc: "Ideal para pescoço e região cervical." },
@@ -36,7 +35,12 @@ export default function FourHeads() {
             <ul className="mt-7 space-y-4">
               {CABECAS.map((c) => (
                 <li key={c.nome} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-brand-sky" />
+                  <img
+                    src="/icons/check-seal-blue.png"
+                    alt=""
+                    aria-hidden
+                    className="mt-0.5 h-5 w-5 shrink-0"
+                  />
                   <span className="text-sm text-white/90 sm:text-base">
                     <span className="font-semibold text-white">{c.nome}</span>{" "}
                     {c.desc}
@@ -50,18 +54,13 @@ export default function FourHeads() {
             </CtaButton>
           </div>
 
-          {/* Foto do produto — TODO: asset (gun rosa + 4 cabeças) */}
-          <div className="rounded-3xl bg-white p-4 shadow-card">
-            <div className="flex aspect-[4/3] items-center justify-center rounded-2xl border-2 border-dashed border-brand-blue/25 bg-brand-blue/5 text-center">
-              <span className="px-6 text-sm font-medium text-brand-deep/70">
-                {/* TODO: asset — substituir por /images/produto.png (gun rosa + 4 cabeças) */}
-                Foto do produto
-                <br />
-                <span className="text-xs text-brand-deep/50">
-                  (asset pendente)
-                </span>
-              </span>
-            </div>
+          {/* Foto do produto (gun rosa + 4 cabeças) */}
+          <div className="rounded-3xl bg-white p-4 shadow-card sm:p-6">
+            <img
+              src="/images/produto.jpg"
+              alt="Massageadora Powerflex GO na cor rosa com as quatro cabeças intercambiáveis: em U, esférica, cilíndrica e plana"
+              className="w-full rounded-2xl"
+            />
           </div>
         </div>
       </Container>
