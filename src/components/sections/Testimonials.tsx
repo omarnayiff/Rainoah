@@ -59,17 +59,17 @@ export default function Testimonials() {
           {DEPOIMENTOS.map((d) => (
             <li
               key={d.nome}
-              className="flex h-[400px] w-[86vw] max-w-[454px] shrink-0 snap-start flex-col rounded-2xl bg-white p-8 shadow-card sm:w-[454px]"
+              className="flex h-[360px] w-[86vw] max-w-[454px] shrink-0 snap-start flex-col rounded-2xl bg-white p-8 shadow-card sm:w-[454px]"
             >
               <div className="flex items-center gap-4">
-                <UserAvatar className="h-16 w-16 shrink-0 text-brand-blue" />
+                <UserAvatar className="h-20 w-20 shrink-0 text-brand-blue" />
                 <div>
                   <div className="flex items-center gap-2">
-                    <p className="text-lg font-semibold text-ink">{d.nome}</p>
+                    <p className="text-xl font-semibold text-ink">{d.nome}</p>
                     <img
                       src="/icons/google.png"
                       alt="Avaliação no Google"
-                      className="h-7 w-7"
+                      className="h-9 w-9"
                     />
                   </div>
                   <div className="mt-1 flex items-center gap-0.5 text-yellow-400">
@@ -79,7 +79,7 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-              <p className="mt-7 text-base leading-relaxed text-ink/80">
+              <p className="mt-4 text-lg leading-relaxed text-ink/80">
                 {d.texto}
               </p>
             </li>

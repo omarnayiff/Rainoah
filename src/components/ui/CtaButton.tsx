@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { CHECKOUT_URL, CHECKOUT_TARGET } from "@/lib/config";
 import { ChevronRight, ArrowOutward } from "@/components/icons";
 
-type Variant = "orange" | "blue" | "navy" | "outline";
+type Variant = "orange" | "blue" | "navy" | "white" | "outline";
 type Arrow = "square" | "outward" | "none";
 
 interface CtaButtonProps {
@@ -27,6 +27,8 @@ const variants: Record<Variant, string> = {
   navy: "rounded-2xl bg-brand-navy text-white hover:bg-[#06294f] font-semibold uppercase tracking-wide",
   outline:
     "rounded-full border border-white/60 bg-transparent text-white hover:bg-white/10 font-medium",
+  white:
+    "rounded-2xl bg-white text-brand-navy hover:bg-gray-100 font-semibold uppercase tracking-wide",
 };
 
 // Cor do "squircle" (quadrado arredondado) que segura a seta ">"
@@ -35,6 +37,7 @@ const squircleByVariant: Record<Variant, string> = {
   blue: "bg-brand-navy text-white",
   navy: "bg-brand-blue text-white",
   outline: "bg-white text-brand-navy",
+  white: "bg-brand-blue text-white",
 };
 
 export default function CtaButton({

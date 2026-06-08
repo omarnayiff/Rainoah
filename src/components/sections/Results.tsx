@@ -17,12 +17,12 @@ const BENEFICIOS = [
 
 export default function Results() {
   return (
-    <section className="relative z-20 py-16 sm:py-24">
+    <section className="relative z-20 min-h-screen py-16 sm:py-24">
       {/* Foto de fundo, sem overlay (imagem em destaque) */}
       <img
         src="/images/resultados.jpg"
         alt="Mulher sorrindo segurando a massageadora Powerflex GO"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[92%_0%]"
       />
 
       <Container>
@@ -30,10 +30,10 @@ export default function Results() {
           Resultados que você pode sentir
         </h2>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-3 lg:items-center lg:gap-6">
+        <div className="mt-14 grid gap-24 lg:grid-cols-3 lg:items-center lg:gap-24">
           {/* Antes (coral, translúcido) */}
-          <div className="relative rounded-3xl bg-accent-coral/75 px-6 pb-5 pt-8 shadow-card">
-            <span className="absolute -left-4 -top-5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-md">
+          <div className="relative rounded-3xl bg-accent-coral/75 px-8 pb-6 pt-10 text-center shadow-card">
+            <span className="absolute left-6 -top-5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-md">
               <img src="/icons/x-red.png" alt="" aria-hidden className="h-9 w-9" />
             </span>
             <ul className="divide-y divide-white/30">
@@ -49,8 +49,8 @@ export default function Results() {
           <div className="hidden lg:block lg:min-h-[420px]" aria-hidden />
 
           {/* Depois (azul, translúcido) */}
-          <div className="relative rounded-3xl bg-brand-cardlight/75 px-6 pb-5 pt-8 shadow-card">
-            <span className="absolute -left-4 -top-5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-md">
+          <div className="relative rounded-3xl bg-brand-cardlight/75 px-8 pb-6 pt-10 text-center shadow-card">
+            <span className="absolute left-6 -top-5 grid h-14 w-14 place-items-center rounded-2xl bg-white shadow-md">
               <img
                 src="/icons/check-seal-green.png"
                 alt=""
@@ -71,7 +71,7 @@ export default function Results() {
 
       {/* Botão centralizado, atravessando a linha da próxima seção */}
       <div className="absolute bottom-0 left-1/2 z-30 -translate-x-1/2 translate-y-1/2">
-        <CtaButton variant="navy">Quero esses resultados</CtaButton>
+        <CtaButton variant="white">Quero esses resultados</CtaButton>
       </div>
     </section>
   );
