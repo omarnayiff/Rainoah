@@ -23,7 +23,7 @@ export default function Results() {
       <img
         src={`${BASE_PATH}/images/resultados.jpg`}
         alt="Mulher sorrindo segurando a massageadora Powerflex GO"
-        className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        className="absolute inset-0 -z-10 h-full w-full object-cover object-[40%_center]"
       />
 
       <Container>
