@@ -1,12 +1,14 @@
+const isProd = process.env.NODE_ENV === "production";
+const REPO = "Rainoah";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Build 100% estático -> gera a pasta /out (sobe pro public_html da Hostinger).
   output: "export",
-  // Sem otimização de imagem no servidor (não há servidor Next em produção).
+  basePath: isProd ? `/${REPO}` : "",
+  assetPrefix: isProd ? `/${REPO}/` : "",
   images: {
     unoptimized: true,
   },
-  // Gera /pagina/index.html (rotas amigáveis em hospedagem estática).
   trailingSlash: true,
 };
 

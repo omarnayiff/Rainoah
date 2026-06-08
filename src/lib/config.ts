@@ -32,3 +32,6 @@ export const PRODUCT = {
   brand: "Rainoah",
   name: "Powerflex GO",
 } as const;
+
+/** Prefixo de assets para GitHub Pages (basePath). */
+export const BASE_PATH = process.env.NODE_ENV === "production" ? "/Rainoah" : "";

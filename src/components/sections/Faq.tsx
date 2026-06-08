@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
+import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { ChevronDown } from "@/components/icons";
 import { SUPPORT_URL, PRODUCT } from "@/lib/config";
 
@@ -38,27 +39,30 @@ export default function Faq() {
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Coluna texto */}
-          <div>
-            <h2 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
-              Perguntas
-              <br />
-              Frequentes
-            </h2>
-            <p className="mt-6 max-w-sm text-sm text-white/80 sm:text-base">
-              Não encontrou sua dúvida aqui? Tente falar com nosso suporte.
-            </p>
-            <CtaButton
-              variant="outline"
-              arrow="outward"
-              href={SUPPORT_URL}
-              className="mt-7"
-            >
-              Falar com suporte
-            </CtaButton>
-          </div>
+          <AnimateOnScroll animation="fade-in-left">
+            <div>
+              <h2 className="text-4xl font-bold leading-tight text-white sm:text-5xl">
+                Perguntas
+                <br />
+                Frequentes
+              </h2>
+              <p className="mt-6 max-w-sm text-sm text-white/80 sm:text-base">
+                Não encontrou sua dúvida aqui? Tente falar com nosso suporte.
+              </p>
+              <CtaButton
+                variant="outline"
+                arrow="outward"
+                href={SUPPORT_URL}
+                className="mt-7"
+              >
+                Falar com suporte
+              </CtaButton>
+            </div>
+          </AnimateOnScroll>
 
           {/* Coluna acordeão */}
-          <div className="space-y-3">
+          <AnimateOnScroll animation="fade-in-right">
+            <div className="space-y-3">
             {FAQS.map((item, i) => {
               const isOpen = open === i;
               return (
@@ -96,6 +100,7 @@ export default function Faq() {
               );
             })}
           </div>
+          </AnimateOnScroll>
         </div>
       </Container>
     </section>
