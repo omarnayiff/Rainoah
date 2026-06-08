@@ -34,44 +34,40 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-mist py-16 sm:py-20">
+    <section className="noise-overlay bg-mist py-16 sm:py-20">
       <Container>
-        <AnimateOnScroll animation="fade-in-up">
+        <AnimateOnScroll animation="fade-up">
           <h2 className="text-center text-2xl font-normal uppercase tracking-wide text-brand-deep sm:text-3xl">
             Quem usa, <span className="font-extrabold">recomenda</span>
           </h2>
         </AnimateOnScroll>
       </Container>
 
-      <AnimateOnScroll animation="fade-in-up" delay={150}>
-        <div className="relative mx-auto mt-10 max-w-[1460px] px-6">
-          {/* Botão anterior */}
-          <button
-            type="button"
-            onClick={() => scroll(-1)}
-            aria-label="Depoimento anterior"
-            className="absolute -left-1 top-1/2 z-10 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-black text-white shadow-md transition-transform hover:scale-105 lg:left-0"
-          >
-            <ChevronRight className="h-4 w-4 rotate-180" />
-          </button>
+      <div className="relative mx-auto mt-10 max-w-[1460px] px-6">
+        <button
+          type="button"
+          onClick={() => scroll(-1)}
+          aria-label="Depoimento anterior"
+          className="absolute -left-1 top-1/2 z-10 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-black/80 text-white shadow-md backdrop-blur-sm transition-transform hover:scale-110 lg:left-0"
+        >
+          <ChevronRight className="h-4 w-4 rotate-180" />
+        </button>
 
-          {/* Trilho */}
-          <ul
-            ref={trackRef}
-            className="no-scrollbar flex snap-x snap-mandatory justify-start gap-6 overflow-x-auto scroll-smooth px-1 py-2 lg:justify-center"
-            aria-label="Depoimentos de clientes"
-          >
-            {DEPOIMENTOS.map((d, i) => (
-              <li
-                key={d.nome}
-                className="flex h-[360px] w-[86vw] max-w-[454px] shrink-0 snap-start flex-col rounded-2xl bg-white p-8 shadow-card sm:w-[454px]"
-                style={{ animationDelay: `${i * 100}ms`, animationFillMode: "forwards" }}
-              >
+        <ul
+          ref={trackRef}
+          className="no-scrollbar flex snap-x snap-mandatory justify-start gap-6 overflow-x-auto scroll-smooth px-1 py-2 lg:justify-center"
+          aria-label="Depoimentos de clientes"
+        >
+          {DEPOIMENTOS.map((d, i) => (
+            <AnimateOnScroll key={d.nome} animation="fade-up" delay={i * 120}>
+              <li className="gradient-border hover-lift flex h-[360px] w-[86vw] max-w-[454px] shrink-0 snap-start flex-col rounded-2xl bg-white p-8 shadow-card sm:w-[454px]">
                 <div className="flex items-center gap-4">
                   <UserAvatar className="h-20 w-20 shrink-0 text-brand-blue" />
                   <div>
                     <div className="flex items-center gap-2">
-                      <p className="text-xl font-semibold text-ink">{d.nome}</p>
+                      <p className="text-xl font-semibold text-ink">
+                        {d.nome}
+                      </p>
                       <img
                         src={`${BASE_PATH}/icons/google.png`}
                         alt="Avaliação no Google"
@@ -79,8 +75,8 @@ export default function Testimonials() {
                       />
                     </div>
                     <div className="mt-1 flex items-center gap-0.5 text-yellow-400">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <Star key={i} className="h-5 w-5" />
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <Star key={j} className="h-5 w-5" />
                       ))}
                     </div>
                   </div>
@@ -89,23 +85,22 @@ export default function Testimonials() {
                   {d.texto}
                 </p>
               </li>
-            ))}
-          </ul>
+            </AnimateOnScroll>
+          ))}
+        </ul>
 
-          {/* Botão próximo */}
-          <button
-            type="button"
-            onClick={() => scroll(1)}
-            aria-label="Próximo depoimento"
-            className="absolute -right-1 top-1/2 z-10 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-black text-white shadow-md transition-transform hover:scale-105 lg:right-0"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div>
-      </AnimateOnScroll>
+        <button
+          type="button"
+          onClick={() => scroll(1)}
+          aria-label="Próximo depoimento"
+          className="absolute -right-1 top-1/2 z-10 grid h-9 w-9 -translate-y-1/2 place-items-center rounded-full bg-black/80 text-white shadow-md backdrop-blur-sm transition-transform hover:scale-110 lg:right-0"
+        >
+          <ChevronRight className="h-4 w-4" />
+        </button>
+      </div>
 
       <Container>
-        <AnimateOnScroll animation="fade-in-up" delay={300}>
+        <AnimateOnScroll animation="fade-up" delay={300}>
           <div className="mt-10 flex justify-center">
             <CtaButton variant="orange">Quero testar também</CtaButton>
           </div>

@@ -1,36 +1,48 @@
 import Container from "@/components/ui/Container";
 import Logo from "@/components/Logo";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import GradientOrb from "@/components/ui/GradientOrb";
 import { BASE_PATH, PRODUCT } from "@/lib/config";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex min-h-[88vh] flex-col overflow-hidden">
-      {/* Foto de fundo (mulher usando a Powerflex GO no pescoço) */}
+    <section className="noise-overlay relative isolate flex min-h-[88vh] flex-col overflow-hidden">
       <img
         src={`${BASE_PATH}/images/hero.jpg`}
         alt="Mulher relaxando ao usar a massageadora Powerflex GO no pescoço"
         className="absolute inset-0 -z-20 h-full w-full object-cover object-[72%_center]"
       />
-      {/* Scrim para legibilidade do texto à esquerda */}
+
+      {/* Dual gradient overlays for depth */}
       <div
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/65 via-black/35 to-transparent"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-black/30 to-transparent"
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-t from-black/30 to-transparent"
         aria-hidden
       />
 
-      {/* Conteúdo do hero (logo agrupado acima do título, maior e mais pra baixo) */}
+      {/* Decorative ambient orbs */}
+      <GradientOrb color="blue" size={320} top="-5%" left="-8%" delay={0} />
+      <GradientOrb color="sky" size={240} bottom="10%" right="-6%" delay={2} />
+
       <div className="relative flex flex-1 items-center py-16">
         <Container>
-          <AnimateOnScroll animation="fade-in-up">
+          <AnimateOnScroll animation="fade-up">
             <Logo size={52} className="text-white" />
           </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-in-up" delay={150}>
+
+          <AnimateOnScroll animation="fade-up" delay={200}>
             <h1 className="mt-8 max-w-2xl text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-[3.5rem]">
               Se livre de uma vez por todas{" "}
-              <span className="text-brand-sky">dessa dor.</span>
+              <span className="text-brand-sky drop-shadow-[0_0_15px_rgba(59,158,232,0.4)]">
+                dessa dor.
+              </span>
             </h1>
           </AnimateOnScroll>
-          <AnimateOnScroll animation="fade-in-up" delay={300}>
+
+          <AnimateOnScroll animation="fade-up" delay={400}>
             <p className="mt-6 max-w-md text-base leading-relaxed text-white/85 sm:text-lg">
               Alivie tensões, relaxe músculos cansados e recupere seu corpo em
               poucos minutos com a {PRODUCT.name}.

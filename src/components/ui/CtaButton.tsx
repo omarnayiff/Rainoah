@@ -18,11 +18,11 @@ interface CtaButtonProps {
 }
 
 const base =
-  "group inline-flex items-center justify-center gap-3 px-6 py-3.5 text-sm transition-colors duration-200 sm:px-7";
+  "group inline-flex items-center justify-center gap-3 px-6 py-3.5 text-sm transition-colors duration-300 sm:px-7 shimmer-btn magnetic-hover active:scale-[0.97]";
 
 const variants: Record<Variant, string> = {
   orange:
-    "rounded-2xl bg-accent-orange text-white hover:bg-[#e64500] font-semibold uppercase tracking-wide",
+    "rounded-2xl bg-accent-orange text-white hover:bg-[#e64500] font-semibold uppercase tracking-wide pulse-glow",
   blue: "rounded-2xl bg-brand-blue text-white hover:bg-[#0a5aa0] font-semibold uppercase tracking-wide",
   navy: "rounded-2xl bg-brand-navy text-white hover:bg-[#06294f] font-semibold uppercase tracking-wide",
   outline:
@@ -62,14 +62,14 @@ export default function CtaButton({
       <span>{children}</span>
       {arrow === "square" && (
         <span
-          className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${squircleByVariant[variant]} transition-transform duration-200 group-hover:translate-x-0.5`}
+          className={`grid h-9 w-9 shrink-0 place-items-center rounded-xl ${squircleByVariant[variant]} transition-transform duration-300 group-hover:translate-x-0.5`}
           aria-hidden
         >
           <ChevronRight className="h-4 w-4" />
         </span>
       )}
       {arrow === "outward" && (
-        <ArrowOutward className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        <ArrowOutward className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
       )}
     </a>
   );

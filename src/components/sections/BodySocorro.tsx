@@ -1,6 +1,8 @@
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import StaggerList from "@/components/ui/StaggerList";
+import GradientOrb from "@/components/ui/GradientOrb";
 import { BASE_PATH, PRODUCT } from "@/lib/config";
 
 const DORES = [
@@ -13,8 +15,7 @@ const DORES = [
 
 export default function BodySocorro() {
   return (
-    <section className="relative isolate overflow-hidden py-20 sm:py-28">
-      {/* Foto de fundo inteira (full-bleed) */}
+    <section className="noise-overlay relative isolate overflow-hidden py-20 sm:py-28">
       <img
         src={`${BASE_PATH}/images/socorro.jpg`}
         alt="Mulher sentada na cama segurando o ombro com dor"
@@ -22,18 +23,20 @@ export default function BodySocorro() {
       />
       <div className="absolute inset-0 -z-10 bg-black/20" aria-hidden />
 
+      {/* Decorative orb behind card */}
+      <GradientOrb color="blue" size={360} top="20%" right="-5%" delay={0.5} />
+
       <Container>
         <div className="flex justify-end">
-          {/* Card semi-transparente por cima da foto */}
-          <AnimateOnScroll animation="fade-in-scale">
-            <div className="w-full rounded-3xl bg-brand-card/60 p-7 ring-1 ring-white/10 backdrop-blur-md sm:p-10 lg:max-w-xl">
+          <AnimateOnScroll animation="blur">
+            <div className="glass-card gradient-border w-full rounded-3xl bg-brand-card/60 p-7 sm:p-10 lg:max-w-xl">
               <h2 className="text-center text-3xl font-normal text-white sm:text-4xl">
                 Seu corpo está
                 <br />
                 pedindo socorro?
               </h2>
 
-              <ul className="mx-auto mt-6 w-fit space-y-4">
+              <StaggerList className="mx-auto mt-6 w-fit space-y-4">
                 {DORES.map((dor) => (
                   <li key={dor} className="flex items-center gap-4">
                     <img
@@ -42,10 +45,12 @@ export default function BodySocorro() {
                       aria-hidden
                       className="h-7 w-7 shrink-0"
                     />
-                    <span className="text-sm font-light text-white/90 sm:text-base">{dor}</span>
+                    <span className="text-sm font-light text-white/90 sm:text-base">
+                      {dor}
+                    </span>
                   </li>
                 ))}
-              </ul>
+              </StaggerList>
 
               <p className="mt-6 text-center text-xs font-normal uppercase tracking-wider text-white/70">
                 Seu corpo precisa de recuperação.

@@ -34,35 +34,17 @@ const config: Config = {
       },
       boxShadow: {
         card: "0 18px 40px -18px rgba(0,0,0,0.25)",
+        "card-hover": "0 25px 60px -15px rgba(0,0,0,0.25)",
+        "glow-orange": "0 0 30px rgba(255, 77, 0, 0.25)",
+        "glow-blue": "0 0 30px rgba(59, 158, 232, 0.25)",
       },
-      keyframes: {
-        "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(2rem)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        "fade-in": {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
-        "fade-in-left": {
-          "0%": { opacity: "0", transform: "translateX(-2rem)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        "fade-in-right": {
-          "0%": { opacity: "0", transform: "translateX(2rem)" },
-          "100%": { opacity: "1", transform: "translateX(0)" },
-        },
-        "fade-in-scale": {
-          "0%": { opacity: "0", transform: "scale(0.9)" },
-          "100%": { opacity: "1", transform: "scale(1)" },
-        },
+      transitionTimingFunction: {
+        "out-quint": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "out-expo": "cubic-bezier(0.19, 1, 0.22, 1)",
       },
-      animation: {
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
-        "fade-in": "fade-in 0.6s ease-out forwards",
-        "fade-in-left": "fade-in-left 0.6s ease-out forwards",
-        "fade-in-right": "fade-in-right 0.6s ease-out forwards",
-        "fade-in-scale": "fade-in-scale 0.5s ease-out forwards",
+      transitionDuration: {
+        "800": "800ms",
+        "1000": "1000ms",
       },
     },
   },

@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import StaggerList from "@/components/ui/StaggerList";
+import GradientOrb from "@/components/ui/GradientOrb";
 import { Play } from "@/components/icons";
 import { BASE_PATH, PRODUCT } from "@/lib/config";
 
@@ -37,13 +39,16 @@ export default function WhyChoose() {
   }
 
   return (
-    <section className="bg-gradient-to-b from-brand-blue to-brand-navy py-20 sm:py-28">
+    <section className="noise-overlay relative overflow-hidden bg-gradient-to-b from-brand-blue to-brand-navy py-20 sm:py-28">
+      {/* Decorative orbs behind content */}
+      <GradientOrb color="blue" size={340} top="-8%" left="-10%" delay={0} />
+      <GradientOrb color="sky" size={260} bottom="-6%" right="-8%" delay={2} />
+
       <Container>
         <div className="grid items-stretch gap-10 lg:grid-cols-2">
-          {/* Vídeo vertical (formato rede social 9:16) */}
-          <AnimateOnScroll animation="fade-in-scale">
+          <AnimateOnScroll animation="scale">
             <div
-              className="relative mx-auto aspect-[9/16] w-full max-w-[360px] cursor-pointer overflow-hidden rounded-3xl bg-brand-navy/60 ring-1 ring-white/10"
+              className="glass-card relative mx-auto aspect-[9/16] w-full max-w-[360px] cursor-pointer overflow-hidden rounded-3xl"
               onClick={togglePlay}
             >
               {showPoster && (
@@ -56,7 +61,7 @@ export default function WhyChoose() {
               <video
                 ref={videoRef}
                 src={`${BASE_PATH}/video_web.mp4`}
-                className={`relative z-0 h-full w-full object-cover ${!showPoster ? '' : 'invisible'}`}
+                className={`relative z-0 h-full w-full object-cover ${!showPoster ? "" : "invisible"}`}
                 playsInline
                 preload="auto"
                 onEnded={() => setPlaying(false)}
@@ -76,34 +81,39 @@ export default function WhyChoose() {
             </div>
           </AnimateOnScroll>
 
-          {/* Texto + lista */}
-          <AnimateOnScroll animation="fade-in-right" delay={150}>
-            <div className="flex flex-col justify-between text-left">
-              <h2 className="text-3xl font-normal text-white sm:text-4xl lg:text-[3rem]">
-                <span className="mb-4 block">Por que tantas pessoas</span>
-                <span className="mb-4 block">estão escolhendo a</span>
-                <span className="block">{PRODUCT.name}?</span>
-              </h2>
+          <div className="flex flex-col justify-between gap-8 text-left">
+            <div>
+              <AnimateOnScroll animation="fade-right">
+                <h2 className="text-3xl font-normal text-white sm:text-4xl lg:text-[3rem]">
+                  <span className="mb-4 block">Por que tantas pessoas</span>
+                  <span className="mb-4 block">estão escolhendo a</span>
+                  <span className="mb-4 block">{PRODUCT.name}?</span>
+                </h2>
+              </AnimateOnScroll>
+            </div>
 
-              <ul className="grid grid-cols-1 gap-y-4">
-                {FEATURES.map((f) => (
-                  <li key={f} className="flex items-center gap-1.5">
-                    <img
-                      src={`${BASE_PATH}/icons/check-seal-blue.png`}
-                      alt=""
-                      aria-hidden
-                      className="h-7 w-7 shrink-0"
-                    />
-                    <span className="text-sm font-light text-white/90 sm:text-base">{f}</span>
-                  </li>
-                ))}
-              </ul>
+            <StaggerList className="grid grid-cols-1 gap-y-4">
+              {FEATURES.map((f) => (
+                <li key={f} className="flex items-center gap-1.5">
+                  <img
+                    src={`${BASE_PATH}/icons/check-seal-blue.png`}
+                    alt=""
+                    aria-hidden
+                    className="h-7 w-7 shrink-0"
+                  />
+                  <span className="text-sm font-light text-white/90 sm:text-base">
+                    {f}
+                  </span>
+                </li>
+              ))}
+            </StaggerList>
 
+            <AnimateOnScroll animation="fade-right" delay={300}>
               <CtaButton variant="orange" className="w-full sm:w-auto">
                 Quero garantir a minha
               </CtaButton>
-            </div>
-          </AnimateOnScroll>
+            </AnimateOnScroll>
+          </div>
         </div>
       </Container>
     </section>
