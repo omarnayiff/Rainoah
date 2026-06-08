@@ -23,10 +23,6 @@ export default function Hero() {
         aria-hidden
       />
 
-      {/* Decorative ambient orbs */}
-      <GradientOrb color="blue" size={320} top="-5%" left="-8%" delay={0} />
-      <GradientOrb color="sky" size={240} bottom="10%" right="-6%" delay={2} />
-
       <div className="relative flex flex-1 items-center py-16">
         <Container>
           <AnimateOnScroll animation="fade-up">
