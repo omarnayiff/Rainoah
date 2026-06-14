@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="relative flex flex-1 items-center py-16">
         <Container>
           <AnimateOnScroll animation="fade-up">
-            <Logo size={52} className="text-white" />
+            <Logo size={52} variant="white" />
           </AnimateOnScroll>
 
           <AnimateOnScroll animation="fade-up" delay={200}>

@@ -10,7 +10,7 @@ export default function Footer() {
       <Container>
         <AnimateOnScroll animation="fade-up">
           <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">
-            <Logo className="text-brand-deep" size={30} />
+            <Logo size={60} variant="blue" />
             <p className="text-xs text-ink/50 sm:text-sm">
               © {year} {PRODUCT.brand}. Todos os direitos reservados.
             </p>

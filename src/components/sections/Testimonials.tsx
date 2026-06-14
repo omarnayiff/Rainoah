@@ -5,21 +5,24 @@ import Container from "@/components/ui/Container";
 import CtaButton from "@/components/ui/CtaButton";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import { BASE_PATH } from "@/lib/config";
-import { Star, UserAvatar, ChevronRight } from "@/components/icons";
+import { Star, ChevronRight } from "@/components/icons";
 
 const DEPOIMENTOS = [
   {
     nome: "Marcelo",
+    img: "profile-marcelo.png",
     texto:
       "Levo para todos os lugares. Uso após os treinos e sinto muita diferença na recuperação.",
   },
   {
     nome: "Milla",
+    img: "profile-milla.png",
     texto:
       "Chego do trabalho com as costas travadas e ela ajuda muito a aliviar a tensão.",
   },
   {
     nome: "Dandara",
+    img: "profile-dandara.png",
     texto: "Compacta, prática e muito eficiente.",
   },
 ];
@@ -62,7 +65,11 @@ export default function Testimonials() {
             <AnimateOnScroll key={d.nome} animation="fade-up" delay={i * 120}>
               <li className="gradient-border hover-lift flex h-[360px] w-[86vw] max-w-[454px] shrink-0 snap-start flex-col rounded-2xl bg-white p-8 shadow-card sm:w-[454px]">
                 <div className="flex items-center gap-4">
-                  <UserAvatar className="h-20 w-20 shrink-0 text-brand-blue" />
+                  <img
+                    src={`${BASE_PATH}/images/${d.img}`}
+                    alt={d.nome}
+                    className="h-20 w-20 shrink-0 rounded-full object-cover ring-2 ring-brand-blue/20"
+                  />
                   <div>
                     <div className="flex items-center gap-2">
                       <p className="text-xl font-semibold text-ink">

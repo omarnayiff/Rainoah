@@ -6,7 +6,7 @@ import CtaButton from "@/components/ui/CtaButton";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import GradientOrb from "@/components/ui/GradientOrb";
 import { ChevronDown } from "@/components/icons";
-import { SUPPORT_URL, PRODUCT } from "@/lib/config";
+import { PRODUCT } from "@/lib/config";
 
 const FAQS = [
   {
@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: "Quanto tempo leva para carregar?",
-    a: "A recarga é rápida e feita via cabo USB, então dá para carregar em qualquer lugar: em casa, no trabalho ou na academia.",
+    a: "A pistola demora aproximadamente 4 horas para carregar totalmente via cabo USB. Você pode carregar em qualquer lugar: em casa, no trabalho ou na academia.",
   },
   {
     q: `Posso usar todos os dias?`,
@@ -57,11 +57,9 @@ export default function Faq() {
             <AnimateOnScroll animation="fade-left" delay={200}>
               <CtaButton
                 variant="outline"
-                arrow="outward"
-                href={SUPPORT_URL}
                 className="mt-7"
               >
-                Falar com suporte
+                Comprar agora
               </CtaButton>
             </AnimateOnScroll>
           </div>

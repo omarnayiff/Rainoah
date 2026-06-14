@@ -12,6 +12,7 @@ import { BASE_PATH, PRODUCT } from "@/lib/config";
 const FEATURES = [
   "Portátil e ultraleve",
   "Carregamento USB",
+  "Carregamento completo em apenas 4 horas",
   "Bateria recarregável",
   "Fácil de transportar",
   "Silencioso",
@@ -60,7 +61,7 @@ export default function WhyChoose() {
               )}
               <video
                 ref={videoRef}
-                src={`${BASE_PATH}/video_web.mp4`}
+                src={`${BASE_PATH}/VÍDEO_LP_POWERFLEX GO.mp4`}
                 className={`relative z-0 h-full w-full object-cover ${!showPoster ? "" : "invisible"}`}
                 playsInline
                 preload="auto"

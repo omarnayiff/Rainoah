@@ -21,7 +21,7 @@ export default function Results() {
   return (
     <section className="noise-overlay relative z-20 min-h-screen py-16 sm:py-24">
       <img
-        src={`${BASE_PATH}/images/resultados.jpg`}
+        src={`${BASE_PATH}/images/resultados2.avif`}
         alt="Mulher sorrindo segurando a massageadora Powerflex GO"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-[40%_center]"
       />
