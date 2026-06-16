@@ -10,19 +10,19 @@ import { Star, ChevronRight } from "@/components/icons";
 const DEPOIMENTOS = [
   {
     nome: "Marcelo",
-    img: "profile-marcelo.png",
+    img: "profile-marcelo.jpg",
     texto:
       "Levo para todos os lugares. Uso após os treinos e sinto muita diferença na recuperação.",
   },
   {
     nome: "Milla",
-    img: "profile-milla.png",
+    img: "profile-milla.jpg",
     texto:
       "Chego do trabalho com as costas travadas e ela ajuda muito a aliviar a tensão.",
   },
   {
     nome: "Dandara",
-    img: "profile-dandara.png",
+    img: "profile-dandara.jpg",
     texto: "Compacta, prática e muito eficiente.",
   },
 ];
