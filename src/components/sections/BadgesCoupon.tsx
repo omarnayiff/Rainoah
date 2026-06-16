@@ -2,7 +2,7 @@ import Container from "@/components/ui/Container";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import StaggerList from "@/components/ui/StaggerList";
 import GradientOrb from "@/components/ui/GradientOrb";
-import { BASE_PATH, COUPON_CODE, COUPON_DISCOUNT } from "@/lib/config";
+import { BASE_PATH } from "@/lib/config";
 
 const SELOS = [
   "Alívio imediato",
@@ -37,13 +37,6 @@ export default function BadgesCoupon() {
             </li>
           ))}
         </StaggerList>
-
-        <AnimateOnScroll animation="fade-up" delay={200}>
-          <p className="mt-9 text-center text-lg font-medium text-white sm:text-2xl">
-            Use o cupom <span className="font-extrabold">{COUPON_CODE}</span> e
-            ganhe {COUPON_DISCOUNT}.
-          </p>
-        </AnimateOnScroll>
       </Container>
     </section>
   );

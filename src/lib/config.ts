@@ -8,14 +8,14 @@
  *  TODOS os botões de compra da página usam esta constante.
  *  Mude aqui (um só lugar) e todos os CTAs são atualizados.
  */
-export const CHECKOUT_URL = "#checkout";
+export const CHECKOUT_URL = "https://pay.kiwify.com.br/6LA8PH2";
 
 /**
  * Onde o checkout abre:
  *  - "_self"  => mesma aba (padrão)
  *  - "_blank" => nova aba
  */
-export const CHECKOUT_TARGET: "_self" | "_blank" = "_self";
+export const CHECKOUT_TARGET: "_self" | "_blank" = "_blank";
 
 /**
  * Link do botão "Falar com suporte" (seção FAQ).

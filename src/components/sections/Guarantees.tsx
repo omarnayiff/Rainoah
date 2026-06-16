@@ -2,11 +2,11 @@ import Container from "@/components/ui/Container";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import StaggerList from "@/components/ui/StaggerList";
 import GradientOrb from "@/components/ui/GradientOrb";
-import { BASE_PATH, COUPON_CODE } from "@/lib/config";
+import { BASE_PATH } from "@/lib/config";
 
 const ITENS = [
   { icon: "/icons/g-frete.png", label: "Frete Grátis" },
-  { icon: "/icons/g-cupom.png", label: `10% OFF com o cupom ${COUPON_CODE}` },
+  { icon: "/icons/g-cupom.png", label: "Condição especial por tempo limitado" },
   { icon: "/icons/g-garantia.png", label: "Garantia de 12 meses" },
   {
     icon: "/icons/g-parcelamento.png",
